@@ -1,3 +1,18 @@
-build:
+
+
+stages:
+  - test
+  - test1
+
+tests:
+  image: node:18-alpine
+  stage: test
   script:
-    - echo "Hello World"
+    - node -v
+
+
+build:
+  image: docker
+  stage: test1
+  script:
+    - docker version
