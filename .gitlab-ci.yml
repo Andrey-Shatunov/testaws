@@ -5,6 +5,7 @@ job1:
     - echo "olo1" > olo1
   artifacts:
     expire_in: 2min
+    public: false
     paths:
       - olo1
 
