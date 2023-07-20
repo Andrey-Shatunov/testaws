@@ -15,7 +15,7 @@ job2:
 
 
 job3:
-  stage: .past
+  stage: .post
   script:
     - ls -la
     - echo "" > olo1
