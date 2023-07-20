@@ -1,18 +1,14 @@
-
-
-stages:
-  - test
-  - test1
-
-tests:
-  image: node:18-alpine
-  stage: test
+job2:
+  stage: .pre
   script:
-    - node -v
+    - ls -la
+    - echo "olo1" > olo1
+  artifacts:
+    expire_in: 2min
+    paths:
+      - olo1
 
-
-build:
-  image: docker
-  stage: test1
+job1:
   script:
-    - docker version
+    - ls -la
+    - cat olo1
