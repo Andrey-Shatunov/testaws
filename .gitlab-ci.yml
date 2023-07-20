@@ -19,7 +19,7 @@ job3:
   script:
     - ls -la
     - echo "" > olo1
-  # artifacts:
-  #   expire_in: 2min
-  #   paths:
-  #     - olo1
+  artifacts:
+    expire_in: 2min
+    paths:
+      - olo1
