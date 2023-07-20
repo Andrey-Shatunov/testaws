@@ -1,4 +1,4 @@
-job2:
+job1:
   stage: .pre
   script:
     - ls -la
@@ -8,7 +8,18 @@ job2:
     paths:
       - olo1
 
-job1:
+job2:
   script:
     - ls -la
     - cat olo1
+
+
+job3:
+  stage: .past
+  script:
+    - ls -la
+    - echo "" > olo1
+  # artifacts:
+  #   expire_in: 2min
+  #   paths:
+  #     - olo1
