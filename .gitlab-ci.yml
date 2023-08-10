@@ -17,4 +17,4 @@ before_script:
 mirror:
   stage: mirror
   script:
-    - git push --mirror git@github.com:Andrey-Shatunov/testaws.git
+    - git push  git@github.com:Andrey-Shatunov/testaws.git
