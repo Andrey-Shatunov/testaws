@@ -1,0 +1,20 @@
+image: timbru31/node-alpine-git:latest
+
+stages:
+  - mirror
+
+before_script:
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+  - git config --global user.email "andreshatuno@gmail"
+  - git config --global user.name "Andrey-Shatunov"
+  - ssh -T git@github.com
+
+mirror:
+  stage: mirror
+  script:
+    - git push --mirror git@github.com:Andrey-Shatunov/testaws.git
