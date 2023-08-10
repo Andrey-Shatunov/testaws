@@ -12,7 +12,7 @@ before_script:
   - chmod 644 ~/.ssh/known_hosts
   - git config --global user.email "andreshatuno@gmail"
   - git config --global user.name "Andrey-Shatunov"
-  - ssh -T git@github.com
+#   - ssh -T git@github.com
 
 mirror:
   stage: mirror
